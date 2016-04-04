@@ -1,5 +1,8 @@
 package com.crookedqueue.simple531remake.Model.ExerciseSetBuilding;
 
+import com.crookedqueue.simple531remake.Model.RoundingRules.Roundable;
+import com.crookedqueue.simple531remake.Model.RoundingRules.RoundedWeightCalc;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +13,13 @@ public class CompoundSetListBuilder {
     private final SetListBuilder setListBuilder;
     ParamsBundle bundle;
     private final List<? extends ExerciseSet> compoundSetList;
+    private final Roundable roundedWeightCalc;
 
     public CompoundSetListBuilder(ParamsBundle bundle) {
         this.bundle = bundle;
         setListBuilder = new SetListBuilder();
         compoundSetList = new ArrayList<>();
+        roundedWeightCalc = new RoundedWeightCalc(bundle.isUseKg(), bundle.isRoundUp());
     }
 
     public List<? extends ExerciseSet> buildCompoundSet(){
@@ -26,11 +31,11 @@ public class CompoundSetListBuilder {
     }
 
     private List<? extends ExerciseSet> buildWarmupSets(){
-        return setListBuilder.buildSetList(LiftType.WARMUP_SET, SetType.WARMUP, bundle.maxWeight);
+        return setListBuilder.buildSetList(LiftType.WARMUP_SET, SetType.WARMUP, roundedWeightCalc.performCalc(bundle.getMaxWeight()));
     }
 
     private List<? extends ExerciseSet> buildWorkingSets(){
-        List workingSetList = setListBuilder.buildSetList(bundle.liftType, bundle.workingSetType, bundle.maxWeight);
+        List workingSetList = setListBuilder.buildSetList(bundle.getLiftType(), bundle.getWorkingSetType(), roundedWeightCalc.performCalc(bundle.getMaxWeight()));
         if (bundle.isUseFsl){
             workingSetList.add(workingSetList.get(0));
         }
@@ -39,6 +44,6 @@ public class CompoundSetListBuilder {
 
 
     private List<? extends ExerciseSet> buildAssistanceSets(){
-        return setListBuilder.buildSetList(bundle.liftType, bundle.assistanceSetType, bundle.maxWeight);
+        return setListBuilder.buildSetList(bundle.getLiftType(), bundle.getAssistanceSetType(), roundedWeightCalc.performCalc(bundle.getMaxWeight()));
     }
 }

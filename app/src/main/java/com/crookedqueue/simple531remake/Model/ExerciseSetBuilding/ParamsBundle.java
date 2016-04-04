@@ -20,6 +20,9 @@ public class ParamsBundle {
         this.maxWeight = maxWeight;
     }
 
+    public LiftType getLiftType() {
+        return liftType;
+    }
     public SetType getWorkingSetType() {
         return workingSetType;
     }

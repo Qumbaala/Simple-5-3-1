@@ -8,5 +8,6 @@ public enum LiftType {
     SQUAT,
     DEADLIFT,
     OVERHEAD_PRESS,
-    WARMUP_SET
+    WARMUP_SET,
+    BORING_BUT_BIG,
 }

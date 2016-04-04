@@ -5,12 +5,12 @@ package com.crookedqueue.simple531remake.Model.ExerciseSetBuilding;
  */
 public class ExerciseSet {
     private final String label;
-    private final double rawWeight;
+    private final double roundedWeight;
     private final int reps;
 
-    public ExerciseSet(String label, double weight, int reps) {
+    public ExerciseSet(String label, double roundedWeight, int reps) {
         this.label = label;
-        this.rawWeight = weight;
+        this.roundedWeight = roundedWeight;
         this.reps = reps;
     }
 
@@ -22,7 +22,7 @@ public class ExerciseSet {
         return reps;
     }
 
-    public double getRawWeight() {
-        return rawWeight;
+    public double getRoundedWeight() {
+        return roundedWeight;
     }
 }
