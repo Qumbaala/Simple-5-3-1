@@ -14,8 +14,8 @@ public class SetListBuilder {
     }
 
     public List<? extends ExerciseSet> buildSetList(LiftType liftType, SetType type, Double maxWeight) {
-        List<Integer> repList = Utils.getRepScheme(type);
-        List<Double> percList = Utils.getPercentages(type);
+        List<Integer> repList = SetListBuildingUtils.getRepScheme(type);
+        List<Double> percList = SetListBuildingUtils.getPercentages(type);
         String label = WordUtils.capitalize(liftType.name()
                                 .toLowerCase()
                                 .replace("_", " "));

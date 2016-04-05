@@ -4,7 +4,7 @@ import com.crookedqueue.simple531remake.Model.ExerciseSetBuilding.ExerciseSet;
 import com.crookedqueue.simple531remake.Model.ExerciseSetBuilding.LiftType;
 import com.crookedqueue.simple531remake.Model.ExerciseSetBuilding.SetListBuilder;
 import com.crookedqueue.simple531remake.Model.ExerciseSetBuilding.SetType;
-import com.crookedqueue.simple531remake.Model.ExerciseSetBuilding.Utils;
+import com.crookedqueue.simple531remake.Model.ExerciseSetBuilding.SetListBuildingUtils;
 
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 public class StaticUtilTests {
     @Test
     public void repFactoryTest(){
-        List<Integer> returnedList = Utils.getRepScheme(SetType.WORKING_SET_WEEK1);
+        List<Integer> returnedList = SetListBuildingUtils.getRepScheme(SetType.WORKING_SET_WEEK1);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(5);
         expectedList.add(5);
@@ -28,7 +28,7 @@ public class StaticUtilTests {
     }
     @Test
     public void repFactoryTestWeek2(){
-        List<Integer> returnedList = Utils.getRepScheme(SetType.WORKING_SET_WEEK2);
+        List<Integer> returnedList = SetListBuildingUtils.getRepScheme(SetType.WORKING_SET_WEEK2);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(3);
         expectedList.add(3);
@@ -37,7 +37,7 @@ public class StaticUtilTests {
     }
     @Test
     public void repFactoryTestWeek3(){
-        List<Integer> returnedList = Utils.getRepScheme(SetType.WORKING_SET_WEEK3);
+        List<Integer> returnedList = SetListBuildingUtils.getRepScheme(SetType.WORKING_SET_WEEK3);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(5);
         expectedList.add(3);
@@ -46,7 +46,7 @@ public class StaticUtilTests {
     }
     @Test
     public void repFactoryTestWeek4(){
-        List<Integer> returnedList = Utils.getRepScheme(SetType.WORKING_SET_WEEK4);
+        List<Integer> returnedList = SetListBuildingUtils.getRepScheme(SetType.WORKING_SET_WEEK4);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(5);
         expectedList.add(5);
@@ -55,7 +55,7 @@ public class StaticUtilTests {
     }
     @Test
     public void repFactoryTestExpNotEqual(){
-        List<Integer> returnedList = Utils.getRepScheme(SetType.WORKING_SET_WEEK1);
+        List<Integer> returnedList = SetListBuildingUtils.getRepScheme(SetType.WORKING_SET_WEEK1);
         List<Integer> expectedList = new ArrayList<>();
         expectedList.add(5);
         expectedList.add(5);
@@ -65,7 +65,7 @@ public class StaticUtilTests {
 
     @Test
     public void percFactoryTestWeek1(){
-        List<Double> actual = Utils.getPercentages(SetType.WORKING_SET_WEEK1);
+        List<Double> actual = SetListBuildingUtils.getPercentages(SetType.WORKING_SET_WEEK1);
         List<Double> expected = new ArrayList<>();
         expected.add(.65);
         expected.add(.75);
@@ -74,7 +74,7 @@ public class StaticUtilTests {
     }
     @Test
     public void percFactoryTestWeek2(){
-        List<Double> actual = Utils.getPercentages(SetType.WORKING_SET_WEEK2);
+        List<Double> actual = SetListBuildingUtils.getPercentages(SetType.WORKING_SET_WEEK2);
         List<Double> expected = new ArrayList<>();
         expected.add(.7);
         expected.add(.8);
@@ -83,7 +83,7 @@ public class StaticUtilTests {
     }
     @Test
     public void percFactoryTestWeek3(){
-        List<Double> actual = Utils.getPercentages(SetType.WORKING_SET_WEEK3);
+        List<Double> actual = SetListBuildingUtils.getPercentages(SetType.WORKING_SET_WEEK3);
         List<Double> expected = new ArrayList<>();
         expected.add(.75);
         expected.add(.85);
@@ -92,7 +92,7 @@ public class StaticUtilTests {
     }
     @Test
     public void percFactoryTestWeek4(){
-        List<Double> actual = Utils.getPercentages(SetType.WORKING_SET_WEEK4);
+        List<Double> actual = SetListBuildingUtils.getPercentages(SetType.WORKING_SET_WEEK4);
         List<Double> expected = new ArrayList<>();
         expected.add(.4);
         expected.add(.5);
@@ -101,7 +101,7 @@ public class StaticUtilTests {
     }
     @Test
     public void percFactoryTestNotEqual(){
-        List<Double> actual = Utils.getPercentages(SetType.WORKING_SET_WEEK1);
+        List<Double> actual = SetListBuildingUtils.getPercentages(SetType.WORKING_SET_WEEK1);
         List<Double> expected = new ArrayList<>();
         expected.add(.4);
         expected.add(.5);

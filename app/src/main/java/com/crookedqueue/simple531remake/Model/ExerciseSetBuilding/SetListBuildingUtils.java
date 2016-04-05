@@ -3,7 +3,7 @@ package com.crookedqueue.simple531remake.Model.ExerciseSetBuilding;
 import java.util.Arrays;
 import java.util.List;
 
-public class Utils {
+public class SetListBuildingUtils {
 
 
 

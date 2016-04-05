@@ -4,30 +4,34 @@ import com.crookedqueue.simple531remake.Model.RoundingRules.Roundable;
 import com.crookedqueue.simple531remake.Model.RoundingRules.RoundedWeightCalc;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by qumbaala on 4/3/2016.
  */
 public class CompoundSetListBuilder {
-    private final SetListBuilder setListBuilder;
     ParamsBundle bundle;
-    private final List<? extends ExerciseSet> compoundSetList;
     private final Roundable roundedWeightCalc;
+    private final SetListBuilder setListBuilder;
+    Map<String, List<? extends ExerciseSet>> compoundSetMap;
+    private final String WARMUP_SETS_KEY = "WARM_UP_SETS";
+    private final String WORKING_SETS_KEY = "WORKING_SETS";
+    private final String ASSISTANCE_SETS_KEY = "ASSISTANCE_SETS";
 
     public CompoundSetListBuilder(ParamsBundle bundle) {
         this.bundle = bundle;
         setListBuilder = new SetListBuilder();
-        compoundSetList = new ArrayList<>();
+        compoundSetMap = new HashMap<>();
         roundedWeightCalc = new RoundedWeightCalc(bundle.isUseKg(), bundle.isRoundUp());
     }
 
-    public List<? extends ExerciseSet> buildCompoundSet(){
-        List<ExerciseSet> compoundList = new ArrayList<>();
-        compoundList.addAll(buildWarmupSets());
-        compoundList.addAll(buildWorkingSets());
-        compoundList.addAll(buildAssistanceSets());
-        return compoundList;
+    public Map<String, List<? extends ExerciseSet>> buildCompoundSets(){
+        compoundSetMap.put(WARMUP_SETS_KEY, buildWarmupSets());
+        compoundSetMap.put(WORKING_SETS_KEY, buildWorkingSets());
+        compoundSetMap.put(ASSISTANCE_SETS_KEY, buildAssistanceSets());
+        return compoundSetMap;
     }
 
     private List<? extends ExerciseSet> buildWarmupSets(){
