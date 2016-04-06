@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/max_formula_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/max_formula_text" />
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerColor"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/squat_container"
+            style="@style/CycleDayPickerLinearLayoutStyle"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:baselineAligned="false">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/squatWeight_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/squat_weight_hint"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@+id/squat_reps_editText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/squat_reps_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/repetitions_hint"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/benchpress_weight_editText" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/bench_container"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            style="@style/CycleDayPickerLinearLayoutStyle"
+            android:baselineAligned="false">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/benchpress_weight_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/bench_press_weight_hint"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@+id/benchpress_reps_editText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayoutSquat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/benchpress_reps_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/repetitions_hint"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/deadlift_weight_editText" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/deadlift_container"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            style="@style/CycleDayPickerLinearLayoutStyle"
+            android:baselineAligned="false">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/deadlift_weight_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/deadlift_weight_hint"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@+id/deadlift_reps_editText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/deadlift_reps_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/repetitions_hint"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/press_weight_editText" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/press_container"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            style="@style/CycleDayPickerLinearLayoutStyle"
+            android:baselineAligned="false">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/press_weight_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/press_weight_hint"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@+id/press_reps_editText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/press_reps_editText"
+                    style="@style/EditTextFloatingLabel"
+                    android:hint="@string/repetitions_hint"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/commit_maxes_btn" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/units_textView_label" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/units_pounds_radioBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/pounds_label_radioBtn" />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/units_kilograms_radioBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kilograms_label_radioBtn" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <Button
+        android:id="@+id/commit_maxes_btn"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/buttonTextColor"
+        android:text="@string/calculate_maxes_btn_label" />
+</LinearLayout>

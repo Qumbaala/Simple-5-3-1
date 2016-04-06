@@ -17,4 +17,55 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="CycleDayPickerLinearLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">72dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="CardViewWrapper" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="elevation">2dp</item>
+    </style>
+
+    <style name="CycleDayButtonParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:selectableItemBackground</item>
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+        <item name="android:background">@drawable/shape_rectangle</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">@drawable/selector_text_color</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
+    </style>
+    <style name="SquatButton" parent="CycleDayButtonParent">
+        <item name="android:drawableTop">@drawable/selector_squat_circle</item>
+    </style>
+    <style name="BenchButton" parent="CycleDayButtonParent">
+        <item name="android:drawableTop">@drawable/selector_bench_circle</item>
+    </style>
+    <style name="DeadliftButton" parent="CycleDayButtonParent">
+        <item name="android:drawableTop">@drawable/selector_deadlift_circle</item>
+    </style>
+    <style name="PressButton" parent="CycleDayButtonParent">
+        <item name="android:drawableTop">@drawable/selector_press_circle</item>
+    </style>
+
+    <style name="EditTextFloatingLabel">
+        <item name="android:focusable">true</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">5</item>
+        <item name="android:selectAllOnFocus">true</item>
+    </style>
+
 </resources>

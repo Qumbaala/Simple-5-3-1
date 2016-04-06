@@ -13,7 +13,5 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
         super(Application.class);
     }
-    MockContext mockContext = new MockContext();
-    DbHelper dbHelper = DbHelper.getInstance(this.getContext());
 
 }

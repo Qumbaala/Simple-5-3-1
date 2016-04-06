@@ -5,4 +5,38 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="squat_week_one_label">Squat Week One</string>
+    <string name="bench_week_one_label">Bench Week One</string>
+    <string name="deadlift_week_one_label">Deadlift Week One</string>
+    <string name="press_week_one_label">Press Week One</string>
+
+    <string name="squat_week_two_label">Squat Week Two</string>
+    <string name="bench_week_two_label">Bench Week Two</string>
+    <string name="deadlift_week_two_label">Deadlift Week Two</string>
+    <string name="press_week_two_label">Press Week Two</string>
+
+    <string name="squat_week_three_label">Squat Week Three</string>
+    <string name="bench_week_three_label">Bench Week Three</string>
+    <string name="deadlift_week_three_label">Deadlift Week Three</string>
+    <string name="press_week_three_label">Press Week Three</string>
+
+    <string name="squat_week_four_label">Squat Deload</string>
+    <string name="bench_week_four_label">Bench Deload</string>
+    <string name="deadlift_week_four_label">Deadlift Deload</string>
+    <string name="press_week_four_label">Press Deload</string>
+
+    <string name="max_formula_text">The fields below will be used to calculate your training maxes. Please enter your best rep record, or 1RM, for each lift. Training maxes will be determined using the following formula provided in Beyond 5/3/1: \n((Weight Lifted * Reps * .0333 + Weight Lifted) * .9)</string>
+    <string name="squat_weight_hint">Squat Weight</string>
+    <string name="repetitions_hint">Repetitons</string>
+    <string name="bench_press_weight_hint">Bench Weight</string>
+    <string name="deadlift_weight_hint">Deadlift Weight</string>
+    <string name="press_weight_hint">Press Weight</string>
+    <string name="pounds_label_radioBtn">lbs</string>
+    <string name="kilograms_label_radioBtn">kg</string>
+    <string name="calculate_maxes_btn_label">Calculate Maxes</string>
+    <string name="units_textView_label">Units</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
