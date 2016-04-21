@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bench_container"
+    style="@style/CycleDayPickerLinearLayoutStyle"
+    android:baselineAligned="false"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/edit_weight"
+            style="@style/EditTextFloatingLabel"
+            android:hint="@string/edit_weight_label"
+            android:inputType="numberDecimal"
+            android:nextFocusDown="@+id/edit_reps" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/txt_x_label" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/txtInputLayoutSquat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/edit_reps"
+            style="@style/EditTextFloatingLabel"
+            android:hint="@string/repetitions_hint"
+            android:inputType="number"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/btn_check_maxes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_peek" />
+
+</LinearLayout>

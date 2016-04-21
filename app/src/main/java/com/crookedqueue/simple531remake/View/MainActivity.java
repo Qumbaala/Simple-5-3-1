@@ -2,8 +2,9 @@ package com.crookedqueue.simple531remake.View;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,9 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.crookedqueue.simple531remake.Model.DataBaseClassModels.DbHelper;
-import com.crookedqueue.simple531remake.Model.DataBaseClassModels.MaxesContainer;
 import com.crookedqueue.simple531remake.R;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnMenuTabClickListener;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnFragmentInteractionListener {
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -38,17 +41,35 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         FrameLayout fragmentFrame = (FrameLayout) findViewById(R.id.fragment_frame);
-        FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().replace(R.id.fragment_frame, new ManuallyEditMaxesFragment()).commit();
+        final FragmentManager fm = getSupportFragmentManager();
+        fm.beginTransaction().replace(R.id.fragment_frame, new CycleDayChooserFragment()).commit();
 
-        DbHelper dbHelper = DbHelper.getInstance(getApplicationContext());
+        BottomBar bottomBar = BottomBar.attach(coordinatorLayout, savedInstanceState);
+        bottomBar.setItemsFromMenu(R.menu.bottombar_menu, new OnMenuTabClickListener() {
+            @Override
+            public void onMenuTabSelected(@IdRes int menuItemId) {
+                switch (menuItemId){
+                    case R.id.cycle_day_picker:
+                        fm.beginTransaction().replace(R.id.fragment_frame, new CycleDayChooserFragment()).commit();
+                        break;
+                    case R.id.maxes_interactor:
+                        fm.beginTransaction().replace(R.id.fragment_frame, new MaxManagerFragment()).commit();
+                        break;
+                    case R.id.cycle_settings:
+                        fm.beginTransaction().replace(R.id.fragment_frame, new SettingsFragment()).commit();
+                        break;
+                }
 
+            }
 
-        MaxesContainer retrievedContainer = dbHelper.retrieveCurrentMaxes();
-        Log.d("***CALL-OUT***", String.valueOf(retrievedContainer.getBenchMax()));
+            @Override
+            public void onMenuTabReSelected(@IdRes int menuItemId) {
 
-        retrievedContainer = dbHelper.retrieveCurrentMaxes();
-        Log.d("***CALL-OUT***", String.valueOf(retrievedContainer.getBenchMax()));
+            }
+        });
+
+        bottomBar.setActiveTabColor("#FF5252");
+
     }
 
     @Override

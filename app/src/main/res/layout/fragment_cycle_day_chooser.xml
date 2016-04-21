@@ -1,164 +1,214 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical">
+    android:fillViewport="true"
+  >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
 
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
 
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
+            <Button
+                android:id="@+id/squat_one_btn"
+                style="@style/SquatButton"
+                android:text="@string/squat_week_one_label" />
+        </android.support.v7.widget.CardView>
 
-                <Button
-                    android:id="@+id/squat_one_btn"
-                    style="@style/SquatButton"
-                    android:text="@string/squat_week_one_label" />
-            </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
 
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/bench_one_btn"
-                    style="@style/BenchButton"
-                    android:text="@string/bench_week_one_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/deadlift_one_btn"
-                    style="@style/DeadliftButton"
-                    android:text="@string/deadlift_week_one_label" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/press_one_btn"
-                    style="@style/PressButton"
-                    android:text="@string/press_week_one_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/squat_two_btn"
-                    style="@style/SquatButton"
-                    android:text="@string/squat_week_two_label" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/bench_two_btn"
-                    style="@style/BenchButton"
-                    android:text="@string/bench_week_two_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/deadlift_two_btn"
-                    style="@style/DeadliftButton"
-                    android:text="@string/deadlift_week_two_label" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/press_two_btn"
-                    style="@style/PressButton"
-                    android:text="@string/press_week_two_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/squat_three_btn"
-                    style="@style/SquatButton"
-                    android:text="@string/squat_week_three_label" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/bench_three_btn"
-                    style="@style/BenchButton"
-                    android:text="@string/bench_week_three_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/deadlift_three_btn"
-                    style="@style/DeadliftButton"
-                    android:text="@string/deadlift_week_three_label" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/press_three_btn"
-                    style="@style/PressButton"
-                    android:text="@string/press_week_three_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/squat_four_btn"
-                    style="@style/SquatButton"
-                    android:text="@string/squat_week_four_label" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/bench_four_btn"
-                    style="@style/BenchButton"
-                    android:text="@string/bench_week_four_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/deadlift_four_btn"
-                    style="@style/DeadliftButton"
-                    android:text="@string/deadlift_week_four_label" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView style="@style/CardViewWrapper">
-
-                <Button
-                    android:id="@+id/press_four_btn"
-                    style="@style/PressButton"
-                    android:text="@string/press_week_four_label" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
+            <Button
+                android:id="@+id/bench_one_btn"
+                style="@style/BenchButton"
+                android:text="@string/bench_week_one_label" />
+        </android.support.v7.widget.CardView>
     </LinearLayout>
+
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/deadlift_one_btn"
+                style="@style/DeadliftButton"
+                android:text="@string/deadlift_week_one_label" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/press_one_btn"
+                style="@style/PressButton"
+                android:text="@string/press_week_one_label" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/squat_two_btn"
+                style="@style/SquatButton"
+                android:text="@string/squat_week_two_label" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/bench_two_btn"
+                style="@style/BenchButton"
+                android:text="@string/bench_week_two_label" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/deadlift_two_btn"
+                style="@style/DeadliftButton"
+                android:text="@string/deadlift_week_two_label" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/press_two_btn"
+                style="@style/PressButton"
+                android:text="@string/press_week_two_label" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/squat_three_btn"
+                style="@style/SquatButton"
+                android:text="@string/squat_week_three_label" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/bench_three_btn"
+                style="@style/BenchButton"
+                android:text="@string/bench_week_three_label" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/deadlift_three_btn"
+                style="@style/DeadliftButton"
+                android:text="@string/deadlift_week_three_label" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/press_three_btn"
+                style="@style/PressButton"
+                android:text="@string/press_week_three_label" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/squat_four_btn"
+                style="@style/SquatButton"
+                android:text="@string/squat_week_four_label" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/bench_four_btn"
+                style="@style/BenchButton"
+                android:text="@string/bench_week_four_label" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/deadlift_four_btn"
+                style="@style/DeadliftButton"
+                android:text="@string/deadlift_week_four_label" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            style="@style/CardViewWrapper"
+            card_view:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/press_four_btn"
+                style="@style/PressButton"
+                android:text="@string/press_week_four_label" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>
 </ScrollView>

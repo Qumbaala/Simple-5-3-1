@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/cycle_day_picker"
+        android:icon="@drawable/ic_dumbbell"
+        android:title="Cycle Day"/>
+    <item
+        android:id="@+id/maxes_interactor"
+        android:icon="@drawable/ic_edit"
+        android:title="Edit Maxes"/>
+    <item
+        android:id="@+id/cycle_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Edit Settings"/>
+
+</menu>

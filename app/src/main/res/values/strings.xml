@@ -26,7 +26,7 @@
     <string name="deadlift_week_four_label">Deadlift Deload</string>
     <string name="press_week_four_label">Press Deload</string>
 
-    <string name="max_formula_text">The fields below will be used to calculate your training maxes. Please enter your best rep record, or 1RM, for each lift. Training maxes will be determined using the following formula provided in Beyond 5/3/1: \n((Weight Lifted * Reps * .0333 + Weight Lifted) * .9)</string>
+    <string name="max_formula_text">The fields below will be used to calculate your training max. Please enter your best rep record, or 1RM.</string>
     <string name="squat_weight_hint">Squat Weight</string>
     <string name="repetitions_hint">Repetitons</string>
     <string name="bench_press_weight_hint">Bench Weight</string>
@@ -37,6 +37,20 @@
     <string name="calculate_maxes_btn_label">Calculate Maxes</string>
     <string name="units_textView_label">Units</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="round_up_settings_label">Round Up</string>
+    <string name="use_first_set_last_label">Use First Set Last</string>
+    <string name="reset_btn_label">Reset</string>
+    <string name="increment_btn_label">Auto Increment</string>
+    <string name="store_new_maxes_btn_label">Record New Maxes</string>
+
+    <string name="edit_weight_label">Weight</string>
+    <string name="txt_x_label">x</string>
+
+    <string-array name="assistance_types">
+        <item>None</item>
+        <item>Boring But Big Flat Fifty</item>
+        <item>Boring But Big Ascending</item>
+        <item>Boring But Big Descending</item>
+        <item>Boring But Big Pyramid</item>
+    </string-array>
 </resources>

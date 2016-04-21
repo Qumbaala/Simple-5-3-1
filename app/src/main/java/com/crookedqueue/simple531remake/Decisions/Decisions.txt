@@ -1,0 +1,5 @@
+***Decisions Documentation***
+-Decided to switch to buttons, dispite the obvious layout bloat, because we now have a limited number of potential options that are known ahead of time. This is to promote the simplicity that my userbase has come to appreciate
+-Decided to manually set up the state-list drawables with each color in order to support pre-lollipop versions of android which represents about 20% of userbase
+-Decided to use enums because they're nice
+-Decided to eliminate some options, i.e. using personally designated warm-up percentages, in order to promote the "correctness" users have been noting in reviews
