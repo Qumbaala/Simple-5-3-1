@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="2dp"
+    app:cardMaxElevation="2dp"
+    android:minHeight="72dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgview_container"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            />
+
+        <TextView
+            android:id="@+id/txt_lift_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_toRightOf="@+id/imgview_container"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txt_lift_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignBaseline="@+id/txt_lift_label"
+            android:layout_toLeftOf="@+id/txt_x"
+            android:layout_toStartOf="@+id/txt_x" />
+
+        <TextView
+            android:id="@+id/txt_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignBaseline="@+id/txt_lift_label"
+            android:layout_toLeftOf="@+id/txt_lift_reps"
+            android:layout_toStartOf="@+id/txt_lift_reps"
+            android:text="@string/txt_x_label" />
+
+        <TextView
+            android:id="@+id/txt_lift_reps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_above="@+id/ll_btn_bar"
+            android:layout_toRightOf="@+id/imgview_container"
+            android:background="@color/dividerColor" />
+
+        <LinearLayout
+            android:id="@+id/ll_btn_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/txt_lift_label"
+            android:layout_toRightOf="@+id/imgview_container"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_plate_loader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="center"
+                android:foreground="?android:selectableItemBackground"
+                android:drawableTop="@drawable/selector_plate_loader"
+                android:textColor="@drawable/selector_text_color"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Plate Loader"/>
+
+            <Button
+                android:id="@+id/btn_joker_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="center"
+                android:foreground="?android:selectableItemBackground"
+                android:drawableTop="@drawable/selector_joker"
+                android:textColor="@drawable/selector_text_color"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Joker Set"/>
+
+            <Button
+                android:id="@+id/btn_record_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:scaleType="center"
+                android:foreground="?android:selectableItemBackground"
+                android:drawableTop="@drawable/selector_add_record"
+                android:textColor="@drawable/selector_text_color"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="Record Set"/>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    >
+
+    <Spinner
+        android:layout_weight=".5"
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner_lift_type"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="Select Lift"
+        android:spinnerMode="dialog"
+        android:entries="@array/lift_types" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:baselineAligned="false"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/edit_pr_weight"
+                style="@style/EditTextFloatingLabel"
+                android:inputType="numberDecimal"
+                android:nextFocusForward="@+id/prReps_editText"
+                android:hint="@string/edit_weight_label"
+                android:nextFocusDown="@+id/prReps_editText" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/edit_pr_reps"
+                style="@style/EditTextFloatingLabel"
+                android:inputType="number"
+                android:nextFocusForward="@+id/prNotesEditText"
+                android:hint="@string/repetitions_hint"
+                android:nextFocusDown="@+id/prNotesEditText" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_pr_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="3"
+        android:hint="@string/edit_notes_hint"
+        android:maxLines="10"
+        android:maxLength="140"
+        android:inputType="textMultiLine" />
+
+</LinearLayout>

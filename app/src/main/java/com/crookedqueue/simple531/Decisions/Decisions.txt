@@ -1,0 +1,9 @@
+***Decisions Documentation***
+-Decided to switch to buttons, dispite the obvious layout bloat, because we now have a limited number of potential options that are known ahead of time. This is to promote the simplicity that my userbase has come to appreciate
+-Decided to manually set up the state-list drawables with each color in order to support pre-lollipop versions of android which represents about 20% of userbase
+-Decided to use enums because they're nice
+-Decided to eliminate some options, i.e. using personally designated warm-up percentages, in order to promote the "correctness" users have been noting in reviews
+-Decided to tie the MaxManagerPresenter to the dialog concretely.  The dialog null checks on the presnter before calling any presenter functionality, and therefore can still be recycled as a stand alone tool in the future.  The solution was simply to good from a UX perspective to change it for architectural reasons.
+-made stop watch a rest timer...only counts up, not down, will achieve same ends and is easier/cleaner to implement
+-Decided to store lift labels as integers in db, wrote static functions to map from lift label enum to int and vice versa
+-decided to use third party FAB in order to more easily control the animations on scroll

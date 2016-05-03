@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@android:color/background_light"
+    android:orientation="vertical"
     android:padding="@dimen/activity_horizontal_margin">
 
     <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
@@ -19,8 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:spinnerMode="dialog"
-            android:entries="@array/assistance_types" />
+            android:entries="@array/assistance_types"
+            android:spinnerMode="dialog" />
 
     </LinearLayout>
 
@@ -46,9 +46,7 @@
             android:gravity="center_vertical" />
     </LinearLayout>
 
-    <View
-        style="@style/SimpleDivider"
-        />
+    <View style="@style/SimpleDivider" />
 
     <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
 
@@ -69,6 +67,8 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical" />
     </LinearLayout>
+
+    <View style="@style/SimpleDivider" />
 
     <LinearLayout style="@style/CycleDayPickerLinearLayoutStyle">
 

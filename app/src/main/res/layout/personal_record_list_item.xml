@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minHeight="72dp"
+    android:layout_margin="2dp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgview_container_pr"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_circle_trophy"
+            />
+
+        <TextView
+            android:id="@+id/txt_lift_label_pr"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/imgview_container_pr"
+            android:layout_toEndOf="@+id/imgview_container_pr"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <TextView
+            android:id="@+id/txt_lift_weight_pr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignBaseline="@+id/txt_lift_label_pr"
+            android:layout_toLeftOf="@+id/txt_x_pr"
+            android:layout_toStartOf="@+id/txt_x_pr" />
+
+        <TextView
+            android:id="@+id/txt_x_pr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignBaseline="@+id/txt_lift_label_pr"
+            android:layout_toLeftOf="@+id/txt_lift_reps_pr"
+            android:layout_toStartOf="@+id/txt_lift_reps_pr"
+            android:text="@string/txt_x_label" />
+
+        <TextView
+            android:id="@+id/txt_lift_reps_pr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+
+        <View
+            android:id="@+id/divider_pr"
+            style="@style/SimpleDivider"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/txt_lift_label_pr"
+            android:layout_toRightOf="@+id/imgview_container_pr"
+            />
+
+
+        <TextView
+            android:id="@+id/txt_date_pr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_below="@+id/divider_pr"
+            android:layout_toRightOf="@+id/imgview_container_pr"
+            />
+
+        <TextView
+            android:id="@+id/txt_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_date_pr"
+            android:layout_toRightOf="@+id/imgview_container_pr"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

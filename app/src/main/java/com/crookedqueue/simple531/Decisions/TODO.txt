@@ -1,0 +1,6 @@
+TODO
+-fix maxes fragment to support landscape mode //future, temp fixed
+-fix bottombar onSavedInstanceState //not working?
+-begin experimentation with graphing library (dunno?)
+-remove all dependency injection for settings params, use dbHelper instead //can do in future
+-add a default message to plate loader if weight <= barweight

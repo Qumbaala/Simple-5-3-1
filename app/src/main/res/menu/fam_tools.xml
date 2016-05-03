@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/btn_stopwatch"
+        android:title="Stopwatch"/>
+    <item android:id="@+id/btn_record_pr"
+        android:title="Record PR"/>
+    <item android:id="@+id/nothing"
+        android:title="Nothing Yet"/>
+
+</menu>

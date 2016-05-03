@@ -1,0 +1,49 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.crookedqueue.simple531.View.ExerciseListFragment">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_exercise_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fam_tools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:menu_fab_size="normal"
+            app:layout_anchor="@id/recycler_exercise_list"
+            android:layout_margin="16dp"
+            app:menu_colorNormal="@color/colorAccent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="bottom|end">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_stopwatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/colorAccent"
+                android:src="@drawable/ic_stopwatch"
+                app:fab_label="Rest Timer" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_record_pr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/colorAccent"
+                android:src="@drawable/ic_add_record_white"
+                app:fab_label="Add Personal Record" />
+        </com.github.clans.fab.FloatingActionMenu>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

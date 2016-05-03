@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple 5/3/1 Remake</string>
+    <string name="app_name">Simple 5/3/1</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -53,4 +53,16 @@
         <item>Boring But Big Descending</item>
         <item>Boring But Big Pyramid</item>
     </string-array>
+    <string name="title_activity_exercise">ExerciseActivity</string>
+    <string name="edit_notes_hint">Notes...</string>
+
+    <string-array name="lift_types">
+        <item>Squat</item>
+        <item>Bench Press</item>
+        <item>Deadlift</item>
+        <item>Overhead Press</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

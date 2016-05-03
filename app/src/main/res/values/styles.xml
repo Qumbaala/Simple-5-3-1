@@ -45,15 +45,19 @@
         <item name="android:textColor">@drawable/selector_text_color</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
     </style>
+
     <style name="SquatButton" parent="CycleDayButtonParent">
         <item name="android:drawableTop">@drawable/selector_squat_circle</item>
     </style>
+
     <style name="BenchButton" parent="CycleDayButtonParent">
         <item name="android:drawableTop">@drawable/selector_bench_circle</item>
     </style>
+
     <style name="DeadliftButton" parent="CycleDayButtonParent">
         <item name="android:drawableTop">@drawable/selector_deadlift_circle</item>
     </style>
+
     <style name="PressButton" parent="CycleDayButtonParent">
         <item name="android:drawableTop">@drawable/selector_press_circle</item>
     </style>
@@ -70,9 +74,9 @@
     </style>
 
     <style name="SimpleDivider">
-        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_height">1dp</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:color">@color/strokeColor</item>
+        <item name="android:background">@color/dividerColor</item>
     </style>
 
 </resources>

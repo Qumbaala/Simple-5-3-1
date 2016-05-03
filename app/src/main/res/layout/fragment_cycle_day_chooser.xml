@@ -18,9 +18,10 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/squat_one_btn"
+                android:id="@+id/btn_squat_one"
                 style="@style/SquatButton"
-                android:text="@string/squat_week_one_label" />
+                android:text="@string/squat_week_one_label"
+                />
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -29,7 +30,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/bench_one_btn"
+                android:id="@+id/btn_bench_one"
                 style="@style/BenchButton"
                 android:text="@string/bench_week_one_label" />
         </android.support.v7.widget.CardView>
@@ -43,7 +44,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/deadlift_one_btn"
+                android:id="@+id/btn_deadlift_one"
                 style="@style/DeadliftButton"
                 android:text="@string/deadlift_week_one_label" />
         </android.support.v7.widget.CardView>
@@ -54,7 +55,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/press_one_btn"
+                android:id="@+id/btn_press_one"
                 style="@style/PressButton"
                 android:text="@string/press_week_one_label" />
         </android.support.v7.widget.CardView>
@@ -68,7 +69,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/squat_two_btn"
+                android:id="@+id/btn_squat_two"
                 style="@style/SquatButton"
                 android:text="@string/squat_week_two_label" />
         </android.support.v7.widget.CardView>
@@ -79,7 +80,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/bench_two_btn"
+                android:id="@+id/btn_bench_two"
                 style="@style/BenchButton"
                 android:text="@string/bench_week_two_label" />
         </android.support.v7.widget.CardView>
@@ -93,7 +94,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/deadlift_two_btn"
+                android:id="@+id/btn_deadlift_two"
                 style="@style/DeadliftButton"
                 android:text="@string/deadlift_week_two_label" />
         </android.support.v7.widget.CardView>
@@ -104,7 +105,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/press_two_btn"
+                android:id="@+id/btn_press_two"
                 style="@style/PressButton"
                 android:text="@string/press_week_two_label" />
         </android.support.v7.widget.CardView>
@@ -118,7 +119,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/squat_three_btn"
+                android:id="@+id/btn_squat_three"
                 style="@style/SquatButton"
                 android:text="@string/squat_week_three_label" />
         </android.support.v7.widget.CardView>
@@ -129,7 +130,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/bench_three_btn"
+                android:id="@+id/btn_bench_three"
                 style="@style/BenchButton"
                 android:text="@string/bench_week_three_label" />
         </android.support.v7.widget.CardView>
@@ -143,7 +144,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/deadlift_three_btn"
+                android:id="@+id/btn_deadlift_three"
                 style="@style/DeadliftButton"
                 android:text="@string/deadlift_week_three_label" />
         </android.support.v7.widget.CardView>
@@ -154,7 +155,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/press_three_btn"
+                android:id="@+id/btn_press_three"
                 style="@style/PressButton"
                 android:text="@string/press_week_three_label" />
         </android.support.v7.widget.CardView>
@@ -168,7 +169,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/squat_four_btn"
+                android:id="@+id/btn_squat_four"
                 style="@style/SquatButton"
                 android:text="@string/squat_week_four_label" />
         </android.support.v7.widget.CardView>
@@ -179,7 +180,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/bench_four_btn"
+                android:id="@+id/btn_bench_four"
                 style="@style/BenchButton"
                 android:text="@string/bench_week_four_label" />
         </android.support.v7.widget.CardView>
@@ -193,7 +194,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/deadlift_four_btn"
+                android:id="@+id/btn_deadlift_four"
                 style="@style/DeadliftButton"
                 android:text="@string/deadlift_week_four_label" />
         </android.support.v7.widget.CardView>
@@ -204,7 +205,7 @@
             card_view:cardUseCompatPadding="false">
 
             <Button
-                android:id="@+id/press_four_btn"
+                android:id="@+id/btn_press_four"
                 style="@style/PressButton"
                 android:text="@string/press_week_four_label" />
         </android.support.v7.widget.CardView>
