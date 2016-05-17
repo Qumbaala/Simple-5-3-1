@@ -154,7 +154,7 @@ public class SetListBuildingUtils {
                 label = LiftLabel.DEADLIFT;
                 break;
             case 3:
-                label = LiftLabel.OVERHEAD_PRESS;
+                label = LiftLabel.PRESS;
                 break;
             case 4:
                 label = LiftLabel.WARM$UP;
@@ -178,7 +178,7 @@ public class SetListBuildingUtils {
             case DEADLIFT:
                 i = 2;
                 break;
-            case OVERHEAD_PRESS:
+            case PRESS:
                 i = 3;
                 break;
             case WARM$UP:

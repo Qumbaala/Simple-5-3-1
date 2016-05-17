@@ -1,24 +1,27 @@
 package com.crookedqueue.simple531.View;
 
-import android.content.Intent;
+import android.support.annotation.IdRes;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.crookedqueue.simple531.Presenter.FragmentInterractor;
+import com.crookedqueue.simple531.Presenter.NavigationPresenter;
 import com.crookedqueue.simple531.R;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnMenuTabClickListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class RecordsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, FragmentInterractor {
+public class RecordsActivity extends AppCompatActivity implements FragmentInterractor {
     @Bind(R.id.fragment_frame_records_activity)
     FrameLayout fragFrame;
     @Bind(R.id.drawer_layout_records)
@@ -27,6 +30,9 @@ public class RecordsActivity extends AppCompatActivity implements NavigationView
     NavigationView navView;
     @Bind(R.id.toolbar_records)
     Toolbar toolbar;
+    @Bind(R.id.coordinator_records)
+    CoordinatorLayout coordinator;
+    NavigationPresenter navPresenter;
     private static final String TOOLBAR_LABEL = "Records";
 
     @Override
@@ -34,37 +40,40 @@ public class RecordsActivity extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records);
         ButterKnife.bind(this);
-        toolbar.setTitle("Records");
+        toolbar.setTitle(TOOLBAR_LABEL);
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        navView.setNavigationItemSelectedListener(this);
-        FragmentManager fragMan = getSupportFragmentManager();
-        fragMan.beginTransaction().replace(fragFrame.getId(), new PersonalRecordFragment()).commit();
+        navPresenter = new NavigationPresenter(this, drawer);
+        navView.setNavigationItemSelectedListener(navPresenter);
+        final FragmentManager fm = getSupportFragmentManager();
+        fm.beginTransaction().replace(fragFrame.getId(), new PersonalRecordFragment()).commit();
+
+        BottomBar bottomBar = BottomBar.attach(coordinator, savedInstanceState);
+        bottomBar.setItemsFromMenu(R.menu.bottombar_records_menu, new OnMenuTabClickListener() {
+            @Override
+            public void onMenuTabSelected(@IdRes int menuItemId) {
+                switch (menuItemId) {
+                    case R.id.menu_personal_records:
+                        fm.beginTransaction().replace(R.id.fragment_frame_records_activity, new PersonalRecordFragment()).commit();
+                        break;
+                    case R.id.menu_maxes:
+                        fm.beginTransaction().replace(R.id.fragment_frame_records_activity, new MaxListFragment()).commit();
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onMenuTabReSelected(@IdRes int menuItemId) {
+
+            }
+        });
+        bottomBar.setActiveTabColor("#FF5252");
     }
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        Class classToLoad = null;
-
-        if (id == R.id.nav_home) {
-            classToLoad = MainActivity.class;
-        } else if (id == R.id.nav_lists_records) {
-
-        } else if (id == R.id.nav_share) {
-
-        }
-        drawer.closeDrawer(GravityCompat.START);
-        if (classToLoad != null) {
-            Intent intent = new Intent(this, classToLoad);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            this.startActivity(intent);
-        }
-        return true;
-    }
 
     @Override
     public void setToolbarTitle(String s) {
@@ -74,6 +83,7 @@ public class RecordsActivity extends AppCompatActivity implements NavigationView
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        navPresenter = null;
         ButterKnife.unbind(this);
     }
 }

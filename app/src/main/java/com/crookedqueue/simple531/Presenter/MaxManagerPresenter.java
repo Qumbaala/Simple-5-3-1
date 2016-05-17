@@ -61,12 +61,12 @@ public class MaxManagerPresenter {
             newMaxes = new MaxesContainer((oldMaxes.getSquatMax() + lowerIncrementImpVal),
                     oldMaxes.getBenchMax() + upperIncrementImpVal,
                     oldMaxes.getDeadliftMax() + lowerIncrementImpVal,
-                    oldMaxes.getOverheadPressMax() + upperIncrementImpVal);
+                    oldMaxes.getPressMax() + upperIncrementImpVal);
         } else {
             newMaxes = new MaxesContainer((oldMaxes.getSquatMax() + lowerIncrementKgVal),
                     oldMaxes.getBenchMax() + upperIncrementKgVal,
                     oldMaxes.getDeadliftMax() + lowerIncrementKgVal,
-                    oldMaxes.getOverheadPressMax() + upperIncrementKgVal);
+                    oldMaxes.getPressMax() + upperIncrementKgVal);
         }
         assignTextValues(newMaxes);
     }
@@ -113,7 +113,7 @@ public class MaxManagerPresenter {
         txtViews.get(0).setText(fixedMap.get(SQUAT));
         txtViews.get(1).setText(fixedMap.get(BENCH_PRESS));
         txtViews.get(2).setText(fixedMap.get(DEADLIFT));
-        txtViews.get(3).setText(fixedMap.get(OVERHEAD_PRESS));
+        txtViews.get(3).setText(fixedMap.get(PRESS));
     }
 
     public MaxesContainer retriveCurrentMaxes(Context context) {
@@ -127,7 +127,7 @@ public class MaxManagerPresenter {
         preparedMap.put(SQUAT, String.valueOf(container.getSquatMax()));
         preparedMap.put(BENCH_PRESS, String.valueOf(container.getBenchMax()));
         preparedMap.put(DEADLIFT, String.valueOf(container.getDeadliftMax()));
-        preparedMap.put(OVERHEAD_PRESS, String.valueOf(container.getOverheadPressMax()));
+        preparedMap.put(PRESS, String.valueOf(container.getPressMax()));
         return preparedMap;
     }
 
@@ -141,7 +141,7 @@ public class MaxManagerPresenter {
         fixedMap.put(SQUAT, squatMax);
         fixedMap.put(BENCH_PRESS, benchMax);
         fixedMap.put(DEADLIFT, deadliftMax);
-        fixedMap.put(OVERHEAD_PRESS, pressMax);
+        fixedMap.put(PRESS, pressMax);
         return fixedMap;
 
     }
@@ -152,7 +152,7 @@ public class MaxManagerPresenter {
                 fixedMap.get(SQUAT),
                 fixedMap.get(BENCH_PRESS),
                 fixedMap.get(DEADLIFT),
-                fixedMap.get(OVERHEAD_PRESS)
+                fixedMap.get(PRESS)
         );
     }
 }

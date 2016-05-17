@@ -102,7 +102,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(COLUMN_SQUAT_MAX, container.getSquatMax());
         values.put(COLUMN_BENCH_MAX, container.getBenchMax());
         values.put(COLUMN_DEADLIFT_MAX, container.getDeadliftMax());
-        values.put(COLUMN_PRESS_MAX, container.getOverheadPressMax());
+        values.put(COLUMN_PRESS_MAX, container.getPressMax());
         values.put(COLUMN_MAXES_DATE, System.currentTimeMillis()); //must be retrieved as long else signed negative
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(MAXES_TABLE_NAME, null, values);
@@ -119,17 +119,49 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(PERSONAL_RECORDS_TABLE_NAME, null, values);
     }
 
+    public void deletePersonalRecord(PersonalRecord record){
+        String cmd = "DELETE FROM " + PERSONAL_RECORDS_TABLE_NAME + " WHERE " + COLUMN_PERSONAL_RECORD_DATE + " = " + record.getLongDate();
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(cmd);
+        db.close();
+    }
+
     public MaxesContainer retrieveCurrentMaxes() {
         String query = "SELECT * FROM " + MAXES_TABLE_NAME + " WHERE " + COLUMN_MAXES_DATE + " = " + "(SELECT MAX(_date) FROM " + MAXES_TABLE_NAME + ")";
         MaxesContainer container = null;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()) {
-            container = new MaxesContainer(cursor.getDouble(0), cursor.getDouble(1), cursor.getDouble(2), cursor.getDouble(3));
+            container = new MaxesContainer(cursor.getDouble(0), cursor.getDouble(1), cursor.getDouble(2), cursor.getDouble(3), cursor.getLong(4));
         }
         cursor.close();
         db.close();
         return container;
+    }
+
+    public List<MaxesContainer> retriveAllMaxes(){
+        String query = "SELECT * FROM " + MAXES_TABLE_NAME;
+        List<MaxesContainer> maxes = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()){
+            cursor.moveToNext(); //skipping default row to prevent people deleting it, causing null pointer and crash
+            while (!cursor.isAfterLast()){
+                MaxesContainer container = new MaxesContainer(cursor.getDouble(0), cursor.getDouble(1), cursor.getDouble(2), cursor.getDouble(3), cursor.getLong(4));
+                maxes.add(container);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        db.close();
+        return maxes;
+    }
+
+    public void deleteMaxRecord(MaxesContainer maxContainer){
+        String cmd = "DELETE FROM " + MAXES_TABLE_NAME + " WHERE " + COLUMN_MAXES_DATE + " = " + maxContainer.getLongDate();
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(cmd);
+        db.close();
     }
 
     public List<PersonalRecord> retrieveAllPersonalRecords() {

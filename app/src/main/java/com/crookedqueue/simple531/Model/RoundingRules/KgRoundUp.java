@@ -9,7 +9,7 @@ public class KgRoundUp implements Roundable {
     }
 
     @Override
-    public Double performCalc(Double weight) {
+    public double performCalc(double weight) {
         return ((2.5 * (Math.ceil(weight / 2.5))));
     }
 }

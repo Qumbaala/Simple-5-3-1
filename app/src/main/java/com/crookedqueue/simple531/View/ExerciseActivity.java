@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.crookedqueue.simple531.Presenter.FragmentInterractor;
+import com.crookedqueue.simple531.Presenter.NavigationPresenter;
 import com.crookedqueue.simple531.R;
 
 import butterknife.Bind;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
 
 import static com.crookedqueue.simple531.View.ExerciseListFragment.*;
 
-public class ExerciseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, FragmentInterractor {
+public class ExerciseActivity extends AppCompatActivity implements FragmentInterractor {
     @Bind(R.id.fragment_frame_exercise_activity)
     FrameLayout fragFrame;
     @Bind(R.id.drawer_layout_exercise)
@@ -30,6 +31,7 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
     @Bind(R.id.toolbar_exercise)
     Toolbar toolbar;
     private static final String TOOLBAR_LABEL = "Exercise List";
+    NavigationPresenter navPresenter;
     int liftLabel;
     int setType;
 
@@ -44,7 +46,8 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        navView.setNavigationItemSelectedListener(this);
+        navPresenter = new NavigationPresenter(this, drawer);
+        navView.setNavigationItemSelectedListener(navPresenter);
         Bundle extras = getIntent().getExtras();
         //gets the extras, passed in the intent to launch this activity
         //these will be passed into the fragment and handed to the presenter
@@ -59,28 +62,6 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        Class classToLoad = null;
-
-        if (id == R.id.nav_home) {
-            classToLoad = MainActivity.class;
-        } else if (id == R.id.nav_lists_records) {
-            classToLoad = RecordsActivity.class;
-        } else if (id == R.id.nav_share) {
-
-        }
-        drawer.closeDrawer(GravityCompat.START);
-        if (classToLoad != null) {
-            Intent intent = new Intent(this, classToLoad);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            this.startActivity(intent);
-        }
-        return true;
-    }
-
-    @Override
     public void setToolbarTitle(String s) {
         toolbar.setTitle(s);
     }
@@ -88,6 +69,7 @@ public class ExerciseActivity extends AppCompatActivity implements NavigationVie
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        navPresenter = null;
         ButterKnife.unbind(this);
     }
 }

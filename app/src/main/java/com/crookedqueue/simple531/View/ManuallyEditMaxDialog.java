@@ -67,6 +67,7 @@ public class ManuallyEditMaxDialog extends DialogFragment {
                         dismiss();
                     }
                 } else {
+                    Toast.makeText(getContext(), "Weight and rep values must be greater than zero", Toast.LENGTH_SHORT).show();
                     dismiss();
                 }
             }

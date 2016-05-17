@@ -89,7 +89,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
                 case DEADLIFT:
                     i = R.drawable.ic_circle_deadlift;
                     break;
-                case OVERHEAD_PRESS:
+                case PRESS:
                     i = R.drawable.ic_circle_press;
                     break;
                 case ASSISTANCE:
@@ -115,7 +115,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         @OnClick(R.id.btn_joker_set)
         public void addJokerSet(){
             DbHelper helper = DbHelper.getInstance(itemView.getContext());
-            RoundedWeightCalc calc = new RoundedWeightCalc(helper.retrieveIsUseKg(), helper.retrieveIsUseRoundUp());
+            RoundedWeightCalc calc = new RoundedWeightCalc(helper.retrieveIsUseKg(), true); //will always round up to prevent no change in numbers
             double weight = Double.parseDouble(txt_weight.getText().toString()) * 1.05;
             int reps = Integer.parseInt(txt_reps.getText().toString());
             ExerciseSet jokerSet = new ExerciseSet(LiftLabel.JOKER, calc.performCalc(weight), reps);

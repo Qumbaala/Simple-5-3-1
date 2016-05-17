@@ -70,6 +70,10 @@ public class PersonalRecordDialog extends DialogFragment {
                         listener.notifyAdapter(); //this feels bad man
                     }
                 }
+                else {
+                    Toast.makeText(getContext(), "Weight and rep values must be greater than zero", Toast.LENGTH_SHORT).show();
+                    dismiss();
+                }
             }
         });
 

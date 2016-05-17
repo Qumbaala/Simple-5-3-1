@@ -8,7 +8,7 @@ public class ImperialRoundUp implements Roundable {
     }
 
     @Override
-    public Double performCalc(Double weight) {
+    public double performCalc(double weight) {
         return (5 * (Math.ceil(Math.abs(weight / 5))));
     }
 }

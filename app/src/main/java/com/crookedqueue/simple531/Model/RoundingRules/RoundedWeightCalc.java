@@ -15,7 +15,7 @@ public class RoundedWeightCalc implements Roundable {
     }
 
     @Override
-    public Double performCalc(Double weight) {
+    public double performCalc(double weight) {
         mRoundable = setRoundingBx(mIsKg, mIsRoundUp); //sets the delegate to perform the calculation
         return mRoundable.performCalc(weight); //returns weight in appropriate format based on rounding formula (either double or int)
     }
@@ -26,4 +26,5 @@ public class RoundedWeightCalc implements Roundable {
         else if (!mIsKg && mIsRoundUp) {return new ImperialRoundUp();} //if not using kg and rounding up
         else    {return new ImperialRoundDown();} //if not using kg and rounding down
     }
+
 }

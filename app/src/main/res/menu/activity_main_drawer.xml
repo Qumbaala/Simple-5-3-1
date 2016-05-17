@@ -22,6 +22,10 @@
                 android:id="@+id/nav_rate"
                 android:icon="@drawable/ic_star"
                 android:title="Rate"/>
+            <item
+                android:id="@+id/nav_email"
+                android:icon="@drawable/ic_email"
+                android:title="Email Developer"/>
         </menu>
     </item>
 

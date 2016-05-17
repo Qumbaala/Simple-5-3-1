@@ -7,7 +7,7 @@ public enum LiftLabel {
     SQUAT,
     BENCH_PRESS,
     DEADLIFT,
-    OVERHEAD_PRESS,
+    PRESS,
     WARM$UP,
     ASSISTANCE,
     JOKER,

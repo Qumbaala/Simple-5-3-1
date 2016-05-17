@@ -7,3 +7,5 @@
 -made stop watch a rest timer...only counts up, not down, will achieve same ends and is easier/cleaner to implement
 -Decided to store lift labels as integers in db, wrote static functions to map from lift label enum to int and vice versa
 -decided to use third party FAB in order to more easily control the animations on scroll
+-decided to use padding to put space between imgbtn and other views in order to improve clickable bounds
+-decided to make joker sets ignore rounding rules and always round to nearest in order to prevent situations where joker set gets rounded down, resulting in no change in weight

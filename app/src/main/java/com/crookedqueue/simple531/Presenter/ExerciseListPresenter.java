@@ -1,5 +1,6 @@
 package com.crookedqueue.simple531.Presenter;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -12,7 +13,7 @@ import com.crookedqueue.simple531.Model.ExerciseSetBuilding.SetListBuildingUtils
 import com.crookedqueue.simple531.R;
 import com.crookedqueue.simple531.View.ExerciseListFragment;
 import com.crookedqueue.simple531.View.PersonalRecordDialog;
-import com.crookedqueue.simple531.View.RestTimerDialog;
+import com.crookedqueue.simple531.View.StopwatchDialog;
 
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class ExerciseListPresenter {
     }
 
     public void buildStopWatchDialog() {
-        RestTimerDialog dialog = new RestTimerDialog();
+        DialogFragment dialog = new StopwatchDialog();
         dialog.show(frag.getFragmentManager(), "Rest Timer Dialog");
     }
 
