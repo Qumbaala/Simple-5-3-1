@@ -12,7 +12,7 @@ public class MaxesContainer {
     private final double squatMax, benchMax, deadliftMax, pressMax;
     private long longDate;
 
-    public MaxesContainer(double squatMax, double pressMax, double deadliftMax, double benchMax) {
+    public MaxesContainer(double squatMax, double benchMax, double deadliftMax, double pressMax) {
         this.squatMax = squatMax;
         this.pressMax = pressMax;
         this.deadliftMax = deadliftMax;

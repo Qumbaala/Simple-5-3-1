@@ -110,4 +110,12 @@ public class ExerciseListFragment extends Fragment {
     public ExerciseListAdapter getAdapter() {
         return adapter;
     }
+
+    public FloatingActionButton getFabStopwatch() {
+        return fabStopwatch;
+    }
+
+    public FloatingActionButton getFabPR() {
+        return fabPR;
+    }
 }
