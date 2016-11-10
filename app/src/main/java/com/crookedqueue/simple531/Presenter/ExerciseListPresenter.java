@@ -56,12 +56,11 @@ public class ExerciseListPresenter {
                 super.onScrolled(recyclerView, dx, dy);
                 if (dy > 0 && frag.getFam().getVisibility() == View.VISIBLE) {
                     frag.getFam().hideMenu(true);
-                    frag.getFam().setClickable(false);
                     frag.getFabStopwatch().setClickable(false);
                     frag.getFabPR().setClickable(false);
                 } else if (dy < 0 && frag.getFam().getVisibility() != View.VISIBLE) {
+                    frag.getFam().close(false);
                     frag.getFam().showMenu(true);
-                    frag.getFam().setClickable(true);
                     frag.getFabStopwatch().setClickable(true);
                     frag.getFabPR().setClickable(true);
                 }

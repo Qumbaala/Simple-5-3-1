@@ -70,6 +70,7 @@ public class ExerciseListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_exercise_list, container, false);
         ButterKnife.bind(this, view);
+        fam.setClosedOnTouchOutside(true);
         fragInterractor.setToolbarTitle(TOOLBAR_LABEL);
         presenter = new ExerciseListPresenter(this, liftLabel, setType);
         presenter.setFamAnimations();

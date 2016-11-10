@@ -68,8 +68,6 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         Button btnPlaterLoader;
         @Bind(R.id.btn_joker_set)
         Button btnJokerSet;
-        @Bind(R.id.btn_record_set)
-        Button btnRecordSet;
 
         public ExerciseViewHolder(View itemView) {
             super(itemView);
@@ -122,14 +120,6 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
             int adjAdapterPos = getAdapterPosition() + 1;
             setList.add(adjAdapterPos, jokerSet);
             notifyItemInserted(adjAdapterPos);
-        }
-
-        @OnClick(R.id.btn_record_set)
-        public void recordSet(){
-            DbHelper helper = DbHelper.getInstance(itemView.getContext());
-            ExerciseSet set = setList.get(getAdapterPosition());
-            helper.insertCompletedSet(set);
-            Toast.makeText(itemView.getContext(), "Added to database!", Toast.LENGTH_SHORT).show();
         }
     }
 }

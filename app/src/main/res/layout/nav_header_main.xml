@@ -26,13 +26,5 @@
         android:text="Simple 5/3/1"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="crookedqueue@gmail.com"
-        android:linksClickable="true"
-        android:autoLink="email"
-        android:textColor="@android:color/primary_text_dark" />
 
 </LinearLayout>

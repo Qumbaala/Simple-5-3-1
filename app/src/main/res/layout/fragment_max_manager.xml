@@ -34,7 +34,7 @@
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:scaleType="center"
-            android:src="@drawable/selector_settings" />
+            android:src="@drawable/selector_edit_max" />
 
     </LinearLayout>
 
@@ -68,7 +68,7 @@
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:scaleType="center"
-            android:src="@drawable/selector_settings" />
+            android:src="@drawable/selector_edit_max" />
 
     </LinearLayout>
 
@@ -102,7 +102,7 @@
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:scaleType="center"
-            android:src="@drawable/selector_settings" />
+            android:src="@drawable/selector_edit_max" />
 
     </LinearLayout>
 
@@ -136,7 +136,7 @@
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:scaleType="center"
-            android:src="@drawable/selector_settings" />
+            android:src="@drawable/selector_edit_max" />
 
 
     </LinearLayout>
