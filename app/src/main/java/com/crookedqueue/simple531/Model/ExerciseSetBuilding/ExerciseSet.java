@@ -18,7 +18,10 @@ public class ExerciseSet {
         this.reps = reps;
     }
 
-
+    //builds a string array of set information for writing to file in csvPresenter
+    public String[] getSetInfoAsStringArray(){
+        return new String[]{stringLabel, Double.toString(roundedWeight), Integer.toString(reps)};
+    }
 
     public int getIntLiftLabel() {
         return intLiftLabel;

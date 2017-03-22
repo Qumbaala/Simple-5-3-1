@@ -2,6 +2,8 @@ package com.crookedqueue.simple531.View;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
@@ -10,14 +12,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.crookedqueue.simple531.Presenter.FragmentInterractor;
 import com.crookedqueue.simple531.Presenter.NavigationPresenter;
 import com.crookedqueue.simple531.R;
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnMenuTabClickListener;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -51,11 +51,12 @@ public class MainActivity extends AppCompatActivity implements FragmentInterract
         final FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(fragFrame.getId(), new CycleDayChooserFragment()).commit();
 
-        BottomBar bottomBar = BottomBar.attach(coordinator, savedInstanceState);
-        bottomBar.setItemsFromMenu(R.menu.bottombar_menu, new OnMenuTabClickListener() {
+        BottomNavigationView bottomBar = (BottomNavigationView) findViewById(R.id.bottom_bar);
+
+        bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
-                switch (menuItemId) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
                     case R.id.menu_choose_cycle_day:
                         fm.beginTransaction().replace(R.id.fragment_frame_main, new CycleDayChooserFragment()).commit();
                         break;
@@ -65,27 +66,23 @@ public class MainActivity extends AppCompatActivity implements FragmentInterract
                     case R.id.menu_edit_cycle_settings:
                         fm.beginTransaction().replace(R.id.fragment_frame_main, new SettingsFragment()).commit();
                         break;
+                    case R.id.menu_save_file:
+                        fm.beginTransaction().replace(R.id.fragment_frame_main, new FileSaveFragment()).commit();
+                        break;
                 }
+                return true;
+            }});
+        }
 
-            }
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+            ButterKnife.unbind(this);
+            navPresenter = null;
+        }
 
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-
-            }
-        });
-        bottomBar.setActiveTabColor("#FF5252");
+        @Override
+        public void setToolbarTitle (String s){
+            toolbar.setTitle(s);
+        }
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ButterKnife.unbind(this);
-        navPresenter = null;
-    }
-
-    @Override
-    public void setToolbarTitle(String s) {
-        toolbar.setTitle(s);
-    }
-}

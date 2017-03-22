@@ -12,5 +12,9 @@
         android:id="@+id/menu_edit_cycle_settings"
         android:icon="@drawable/ic_settings"
         android:title="Edit Settings"/>
+    <item
+        android:id="@+id/menu_save_file"
+        android:icon="@drawable/ic_upload"
+        android:title="Export Cycle"/>
 
 </menu>

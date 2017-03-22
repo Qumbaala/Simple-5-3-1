@@ -38,17 +38,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".View.MainActivity"
-           >
+            tools:context=".View.MainActivity">
 
             <FrameLayout
                 android:id="@+id/fragment_frame_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_above="@+id/bottom_bar"
                 />
+
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:itemBackground="@color/colorPrimary"
+                app:itemIconTint="@color/buttonTextColor"
+                app:itemTextColor="@color/buttonTextColor"
+                app:menu="@menu/bottombar_menu">
+            </android.support.design.widget.BottomNavigationView>
+
         </RelativeLayout>
-
-
     </android.support.design.widget.CoordinatorLayout>
 
 

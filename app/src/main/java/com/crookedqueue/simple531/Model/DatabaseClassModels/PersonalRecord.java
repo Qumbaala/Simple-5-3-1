@@ -42,6 +42,10 @@ public class PersonalRecord {
         stringLabel = SetListBuildingUtils.stringFromLabel(liftLabel);
     }
 
+    public String[] getPersonalRecordAsStringArray(){
+        return new String[]{getFormattedDate(), stringLabel, String.valueOf(weight), String.valueOf(reps), note};
+    }
+
     public String getFormattedDate() {
         Date date = new Date(this.longDate);
         SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");

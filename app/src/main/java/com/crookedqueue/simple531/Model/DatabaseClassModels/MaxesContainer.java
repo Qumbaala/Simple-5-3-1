@@ -42,6 +42,10 @@ public class MaxesContainer {
         }
     }
 
+    public String[] getMaxContainerStringArray(){
+        return new String[]{getFormattedDate(), String.valueOf(squatMax), String.valueOf(benchMax), String.valueOf(deadliftMax), String.valueOf(pressMax)};
+    }
+
     public String getFormattedDate(){
         Date date = new Date(this.longDate);
         SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");

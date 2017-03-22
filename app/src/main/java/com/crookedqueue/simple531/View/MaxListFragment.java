@@ -48,7 +48,7 @@ public class MaxListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_max_list, container, false);
         ButterKnife.bind(this, view);
         fragInterractor.setToolbarTitle(TOOLBAR_LABEL);
-        adapter = new MaxListAdapter(DbHelper.getInstance(getContext()).retriveAllMaxes());
+        adapter = new MaxListAdapter(DbHelper.getInstance(getContext()).retrieveAllMaxes());
         recycler.setAdapter(adapter);
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;

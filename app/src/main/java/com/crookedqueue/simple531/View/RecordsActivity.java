@@ -1,6 +1,8 @@
 package com.crookedqueue.simple531.View;
 
 import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -9,15 +11,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.crookedqueue.simple531.Presenter.FragmentInterractor;
 import com.crookedqueue.simple531.Presenter.NavigationPresenter;
 import com.crookedqueue.simple531.R;
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnMenuTabClickListener;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -51,29 +51,24 @@ public class RecordsActivity extends AppCompatActivity implements FragmentInterr
         final FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(fragFrame.getId(), new PersonalRecordFragment()).commit();
 
-        BottomBar bottomBar = BottomBar.attach(coordinator, savedInstanceState);
-        bottomBar.setItemsFromMenu(R.menu.bottombar_records_menu, new OnMenuTabClickListener() {
+        BottomNavigationView bottomBar = (BottomNavigationView) findViewById(R.id.bottom_bar_records);
+        bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
-                switch (menuItemId) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
                     case R.id.menu_personal_records:
                         fm.beginTransaction().replace(R.id.fragment_frame_records_activity, new PersonalRecordFragment()).commit();
                         break;
                     case R.id.menu_maxes:
                         fm.beginTransaction().replace(R.id.fragment_frame_records_activity, new MaxListFragment()).commit();
                         break;
+                    case R.id.menu_save_file_records:
+                        fm.beginTransaction().replace(R.id.fragment_frame_records_activity, new ExportRecordsFragment()).commit();
                 }
-
-            }
-
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-
+                return true;
             }
         });
-        bottomBar.setActiveTabColor("#FF5252");
     }
-
 
     @Override
     public void setToolbarTitle(String s) {

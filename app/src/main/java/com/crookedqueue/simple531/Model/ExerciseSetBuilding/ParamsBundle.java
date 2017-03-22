@@ -1,5 +1,7 @@
 package com.crookedqueue.simple531.Model.ExerciseSetBuilding;
 
+import com.crookedqueue.simple531.Model.DatabaseClassModels.DbHelper;
+
 /**
  * This class is going to bundle all the parameters we need to pass off to the SetListBuilder(s) in order to construct our sets.
  * Will contain params for LiftLabel of Workingset and assistance, Max Weight, Units, Rounding Rule, and FSL
@@ -25,7 +27,25 @@ public class ParamsBundle{
         this.maxWeight = maxWeight;
     }
 
+    //using the dbHelper is preferred, but is android framework dependent
+    //pass null for liftLabel and workingSetType when building files
+    public ParamsBundle(LiftLabel liftLabel, SetType workingSetType, DbHelper dbHelper){
+        this.liftLabel = liftLabel;
+        this.workingSetType = workingSetType;
+        //these four values are properties of settings
+        this.assistanceSetType = dbHelper.retrieveAssistanceWork();
+        this.isUseKg = dbHelper.retrieveIsUseKg();
+        this.isRoundUp = dbHelper.retrieveIsUseRoundUp();
+        this.isUseFsl = dbHelper.retrieveIsUseFsl();
+        //must null check before searching db
+        this.maxWeight = liftLabel != null ? dbHelper.retrieveCurrentMaxes().getMaxFromLiftLabel(liftLabel):0;
+    }
 
+    //factory for getting settings only bundle for building files
+    public static ParamsBundle getSettingsBundle(DbHelper dbHelper){
+        //return new params bundle with first two values as null
+        return new ParamsBundle(null, null, dbHelper);
+    }
 
 
     public LiftLabel getLiftLabel() {

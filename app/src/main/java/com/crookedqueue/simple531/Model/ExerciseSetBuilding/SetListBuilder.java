@@ -5,6 +5,7 @@ import com.crookedqueue.simple531.Model.RoundingRules.RoundedWeightCalc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by qumbaala on 4/3/2016.
@@ -35,5 +36,4 @@ public class SetListBuilder {
         }
         return exerciseSets;
     }
-
 }

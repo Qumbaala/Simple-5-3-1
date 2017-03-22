@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_personal_records"
         android:icon="@drawable/ic_pr_trophy"
@@ -9,5 +10,8 @@
         android:id="@+id/menu_maxes"
         android:icon="@drawable/ic_dumbbell"
         android:title="Maxes" />
-
+    <item
+        android:id="@+id/menu_save_file_records"
+        android:icon="@drawable/ic_upload"
+        android:title="Export Records"/>
 </menu>

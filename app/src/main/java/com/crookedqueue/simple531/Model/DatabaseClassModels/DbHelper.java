@@ -139,7 +139,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return container;
     }
 
-    public List<MaxesContainer> retriveAllMaxes(){
+    public List<MaxesContainer> retrieveAllMaxes(){
         String query = "SELECT * FROM " + MAXES_TABLE_NAME;
         List<MaxesContainer> maxes = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
