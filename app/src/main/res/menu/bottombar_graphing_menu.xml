@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_max_progression_graphs"
+        android:icon="@drawable/ic_menu_graphing"
+        android:title="Max Progression"/>
+    <item
+        android:id="@+id/menu_personal_record_graphs"
+        android:icon="@drawable/ic_menu_graphing"
+        android:title="Personal Records"/>
+</menu>

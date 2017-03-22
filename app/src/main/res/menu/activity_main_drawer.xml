@@ -8,8 +8,12 @@
             android:title="Home" />
         <item
             android:id="@+id/nav_lists_records"
-            android:icon="@drawable/ic_menu_lists_records"
+            android:icon="@drawable/ic_records"
             android:title="Records"/>
+        <item
+            android:id="@+id/nav_graphing"
+            android:icon="@drawable/ic_menu_lists_records"
+            android:title="Graphing"/>
     </group>
 
     <item android:title="Communicate">

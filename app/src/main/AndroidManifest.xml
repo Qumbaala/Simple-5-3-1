@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.crookedqueue.simple531" >
+    package="com.crookedqueue.simple531">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -10,31 +10,34 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.crookedqueue.simple531.View.MainActivity"
+            android:name=".View.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.crookedqueue.simple531.View.ExerciseActivity"
+            android:name=".View.ExerciseActivity"
             android:label="@string/title_activity_exercise"
-            android:parentActivityName="com.crookedqueue.simple531.View.MainActivity"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
+            android:parentActivityName=".View.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crookedqueue.simple531.View.MainActivity" />
         </activity>
-        <activity android:name="com.crookedqueue.simple531.View.RecordsActivity"
-            android:screenOrientation="portrait">
-        </activity>
+        <activity
+            android:name=".View.RecordsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".View.GraphingActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

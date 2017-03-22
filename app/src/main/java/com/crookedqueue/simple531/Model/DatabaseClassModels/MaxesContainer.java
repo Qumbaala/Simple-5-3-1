@@ -48,7 +48,7 @@ public class MaxesContainer {
 
     public String getFormattedDate(){
         Date date = new Date(this.longDate);
-        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("MM/yy");
         return format.format(date);
     }
 

@@ -42,6 +42,10 @@ public class PersonalRecord {
         stringLabel = SetListBuildingUtils.stringFromLabel(liftLabel);
     }
 
+    public String getDateAndNote(){
+        return getFormattedDate() + "\n" + getNote();
+    }
+
     public String[] getPersonalRecordAsStringArray(){
         return new String[]{getFormattedDate(), stringLabel, String.valueOf(weight), String.valueOf(reps), note};
     }

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.crookedqueue.simple531.R;
+import com.crookedqueue.simple531.View.GraphingActivity;
 import com.crookedqueue.simple531.View.MainActivity;
 import com.crookedqueue.simple531.View.RecordsActivity;
 
@@ -30,6 +31,8 @@ public class NavigationPresenter implements NavigationView.OnNavigationItemSelec
             classToLoad = activity.getClass() != MainActivity.class ? MainActivity.class : null;
         } else if (id == R.id.nav_lists_records) {
             classToLoad = activity.getClass() != RecordsActivity.class ? RecordsActivity.class : null;
+        } else if (id == R.id.nav_graphing) {
+            classToLoad = activity.getClass() != GraphingActivity.class ? GraphingActivity.class : null;
         } else if (id == R.id.nav_share) {
             final Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
