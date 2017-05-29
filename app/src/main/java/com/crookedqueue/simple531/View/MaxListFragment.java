@@ -27,7 +27,7 @@ public class MaxListFragment extends Fragment {
     RecyclerView recycler;
     MaxListAdapter adapter;
     FragmentInterractor fragInterractor;
-    private final static String TOOLBAR_LABEL= "Max List";
+    private final static String TOOLBAR_LABEL= "Training Max List";
 
 
     public MaxListFragment() {

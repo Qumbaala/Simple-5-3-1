@@ -40,7 +40,7 @@ public class GraphingActivity extends AppCompatActivity implements FragmentInter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graphing);
         ButterKnife.bind(this);
-        toolbar.setTitle("Max Progression");
+        toolbar.setTitle("Training Max Progression");
         setSupportActionBar(toolbar);
         navPresenter = new NavigationPresenter(this, drawer);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

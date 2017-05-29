@@ -51,7 +51,7 @@ public class ManuallyEditMaxDialog extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setView(view);
-        builder.setTitle("Manually Edit Max");
+        builder.setTitle("Manually Edit Training Max");
         builder.setMessage(R.string.max_formula_text);
         builder.setPositiveButton("Set Max",  new DialogInterface.OnClickListener() {
             @Override

@@ -33,6 +33,9 @@ public class SeriesCreator {
             dataPoints.add(new Entry(i + 1, (float) container.getMaxFromLiftLabel(liftLabel), container.getFormattedDate()));
             i++;
         }
+        if (dataPoints.size() > 1){
+            dataPoints.remove(0);
+        }
         return dataPoints;
     }
 

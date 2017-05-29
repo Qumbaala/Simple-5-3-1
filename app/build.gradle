@@ -6,9 +6,9 @@ android {
 
     defaultConfig {
         applicationId "com.crookedqueue.simple531"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 25
-        versionCode 11
+        versionCode 13
         versionName "2.0"
     }
     buildTypes {

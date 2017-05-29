@@ -7,7 +7,7 @@
     <item
         android:id="@+id/menu_edit_maxes"
         android:icon="@drawable/ic_dumbbell"
-        android:title="Edit Maxes"/>
+        android:title="Edit Training Maxes"/>
     <item
         android:id="@+id/menu_edit_cycle_settings"
         android:icon="@drawable/ic_settings"

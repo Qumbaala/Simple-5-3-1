@@ -78,7 +78,7 @@ public class MaxProgressionGraphingFragment extends Fragment implements OnChartV
         //style the graph
         maxChart.setOnChartValueSelectedListener(this);
         Description description = new Description();
-        description.setText("Max Progression");
+        description.setText("Training Max Progression");
         maxChart.setDescription(description);
         maxChart.animateXY(500, 1000);
         maxChart.getAxisRight().setEnabled(false);

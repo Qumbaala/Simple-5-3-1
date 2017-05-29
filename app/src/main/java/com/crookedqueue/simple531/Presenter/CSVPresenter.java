@@ -108,20 +108,21 @@ public class CSVPresenter {
                     writer.writeNext(set.getSetInfoAsStringArray());
                 }
             }
-        }
-        //write a perc table to csv file
-        String[] labels = new String[]{"", String.valueOf(dbHelper.retrieveCurrentMaxes().getSquatMax()), String.valueOf(dbHelper.retrieveCurrentMaxes().getBenchMax()), String.valueOf(dbHelper.retrieveCurrentMaxes().getDeadliftMax()), String.valueOf(dbHelper.retrieveCurrentMaxes().getPressMax())};
-        //increment by 5%
-        double incrementAmount = .05;
-        //write headers
-        if (appendTable) {
-            writer.writeNext(blankArray);
-            writer.writeNext(labels);
-            for (int i = 1; i <= 30; i++) {
-                String[] row = new String[]{String.valueOf(i * incrementAmount * 100) + "%", String.valueOf(((i * incrementAmount) * dbHelper.retrieveCurrentMaxes().getSquatMax())), String.valueOf(((i * incrementAmount) * dbHelper.retrieveCurrentMaxes().getBenchMax())), String.valueOf(((i * incrementAmount) * dbHelper.retrieveCurrentMaxes().getDeadliftMax())), String.valueOf(((i * incrementAmount) * dbHelper.retrieveCurrentMaxes().getPressMax()))};
-                writer.writeNext(row);
+            //write a perc table to csv file
+            String[] labels = new String[]{"", String.valueOf(dbHelper.retrieveCurrentMaxes().getSquatMax()), String.valueOf(dbHelper.retrieveCurrentMaxes().getBenchMax()), String.valueOf(dbHelper.retrieveCurrentMaxes().getDeadliftMax()), String.valueOf(dbHelper.retrieveCurrentMaxes().getPressMax())};
+            //increment by 5%
+            double incrementAmount = .05;
+            //write headers
+            if (appendTable) {
+                writer.writeNext(blankArray);
+                writer.writeNext(labels);
+                for (int j = 1; j <= 30; j++) {
+                    String[] row = new String[]{String.valueOf(j * incrementAmount * 100) + "%", String.valueOf(((j * incrementAmount) * dbHelper.retrieveCurrentMaxes().getSquatMax())), String.valueOf(((j * incrementAmount) * dbHelper.retrieveCurrentMaxes().getBenchMax())), String.valueOf(((j * incrementAmount) * dbHelper.retrieveCurrentMaxes().getDeadliftMax())), String.valueOf(((j * incrementAmount) * dbHelper.retrieveCurrentMaxes().getPressMax()))};
+                    writer.writeNext(row);
+                }
             }
         }
+
         //intent for sharing with other apps
         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
         sharingIntent.setType("text/csv");

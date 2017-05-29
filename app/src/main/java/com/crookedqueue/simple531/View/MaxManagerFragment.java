@@ -40,7 +40,7 @@ public class MaxManagerFragment extends Fragment{
     TextView txtDeadliftMax;
     @Bind(R.id.txt_press_max)
     TextView txtPressMax;
-    private static final String TOOLBAR_LABEL = "Edit Maxes";
+    private static final String TOOLBAR_LABEL = "Edit Training Maxes";
     FragmentInterractor fragInterractor;
     MaxManagerPresenter presenter;
 

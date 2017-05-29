@@ -9,7 +9,7 @@
     <item
         android:id="@+id/menu_maxes"
         android:icon="@drawable/ic_dumbbell"
-        android:title="Maxes" />
+        android:title="Training Maxes" />
     <item
         android:id="@+id/menu_save_file_records"
         android:icon="@drawable/ic_upload"

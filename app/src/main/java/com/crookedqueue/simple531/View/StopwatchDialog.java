@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crookedqueue.simple531.R;
 
@@ -45,7 +46,7 @@ public class StopwatchDialog extends DialogFragment {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setView(view);
         builder.setTitle("Rest Timer");
-        timer = initCountdownTimer(90000);
+        timer = initCountdownTimer(11000);
         builder.setPositiveButton("+30sec", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -87,7 +88,7 @@ public class StopwatchDialog extends DialogFragment {
             @Override
             public void onTick(long millisUntilFinished) {
                 millisLeft = millisUntilFinished;
-                txtTime.setText(String.format(Locale.getDefault(),"%d:%d",
+                txtTime.setText(String.format(Locale.getDefault(),"%02d:%02d",
                         TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
                         TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)))
@@ -96,8 +97,13 @@ public class StopwatchDialog extends DialogFragment {
 
             @Override
             public void onFinish() {
-
-                dismiss();
+                //if user changes activities before countdown timer finishes, and then it finishes while they're in that activity, app will crash.  This is quick and dirty.
+                try {
+                    dismiss();
+                }
+                catch(Exception e){
+                    Toast.makeText(getContext(), "Rest timer is finished.", Toast.LENGTH_SHORT);
+                }
             }
         };
     }

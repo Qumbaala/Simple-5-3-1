@@ -39,9 +39,9 @@
 
     <string name="round_up_settings_label">Round Up</string>
     <string name="use_first_set_last_label">Use First Set Last</string>
-    <string name="reset_btn_label">Reset</string>
+    <string name="reset_btn_label">Restore Last Saved</string>
     <string name="increment_btn_label">Auto Increment</string>
-    <string name="store_new_maxes_btn_label">Record New Maxes</string>
+    <string name="store_new_maxes_btn_label">Record These Maxes</string>
 
     <string name="edit_weight_label">Weight</string>
     <string name="txt_x_label">x</string>
